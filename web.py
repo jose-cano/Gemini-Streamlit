@@ -5,6 +5,7 @@ from utils import response_generator, role_to_streamlit
 # Display Form Title
 st.title("Gemini Chatbot")
 
+# Add API key to session state
 if "api_key" not in st.session_state:
     api_key = st.text_input("Your Gemini API Key", type='password')
     if api_key:
@@ -20,8 +21,6 @@ model = genai.GenerativeModel('gemini-pro')
 # Add a Gemini Chat history object to Streamlit session state
 if "chat" not in st.session_state:
     st.session_state.chat = model.start_chat(history=[])
-
-
 
 # Display chat messages from history above current input box
 for message in st.session_state.chat.history:
