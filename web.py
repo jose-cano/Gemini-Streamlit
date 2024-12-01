@@ -7,7 +7,7 @@ st.title("Gemini Chatbot")
 
 # Add API key to session state
 if "api_key" not in st.session_state:
-    api_key = st.text_input("Your Gemini API Key", type='password')
+    api_key = st.secrets['api']['api_key']
     if api_key:
         st.session_state.api_key = api_key
 
