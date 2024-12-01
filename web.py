@@ -25,6 +25,7 @@ if "chat" not in st.session_state:
     st.session_state.chat = model.start_chat(history=[])
 
 uploaded_file = st.file_uploader("Load file: ")
+image = None
 # Process the uploaded file
 if uploaded_file:
     try:
